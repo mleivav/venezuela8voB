@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Descubre Venezuela | Guía Turística</title>
+  <style>
+    :root {
+      --primary: #1d3557;
+      --accent: #e63946;
+      --bg: #f8f9fa;
+      --text: #2b2d42;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1596700812239-16a75f8f3769?q=80&w=1200') center/cover no-repeat;
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.25rem;
+      max-width: 600px;
+    }
+
+    nav {
+      background-color: var(--primary);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #f1faee;
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      border-bottom: 3px solid var(--accent);
+      display: inline-block;
+      padding-bottom: 0.2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1.2rem;
+    }
+
+    .card-content h3 {
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    footer {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Venezuela Te Espera</h1>
+    <p>Tierra de gracia, naturaleza indómita, playas caribeñas y los tepuyes más antiguos del planeta.</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#destinos">Destinos</a></li>
+      <li><a href="#gastronomia">Gastronomía</a></li>
+      <li><a href="#consejos">Consejos de Viaje</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    
+    <section id="destinos">
+      <h2>Destinos Principales</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1596700812239-16a75f8f3769?q=80&w=600" alt="Salto Ángel">
+          <div class="card-content">
+            <h3>Parque Nacional Canaima y Salto Ángel</h3>
+            <p>Hogar de la caída de agua más alta del mundo (979 metros) y de majestuosos tepuyes milenarios en el corazón de la selva amazónica.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=600" alt="Los Roques">
+          <div class="card-content">
+            <h3>Archipiélago Los Roques</h3>
+            <p>Un paraíso caribeño de arrecifes de coral, aguas turquesas cristalinas y arena blanca ideal para buceo y relajación.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600" alt="Mérida">
+          <div class="card-content">
+            <h3>Los Andes y Mérida</h3>
+            <p>Montañas nevadas, pueblos pintorescos y el Teleférico Mukumbarí, el más alto y segundo más largo del mundo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gastronomia">
+      <h2>Gastronomía Imperdible</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="card-content">
+            <h3>La Arepa</h3>
+            <p>El plato nacional por excelencia. Un pan de maíz asado o frito relleno de infinidad de ingredientes como la famosa "Reina Pepiada".</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h3>Pabellón Criollo</h3>
+            <p>Plato tradicional compuesto por arroz blanco, carne desmechada, caraotas negras (frijoles) y tajadas de plátano maduro frito.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h3>Cacao y Café Venezolano</h3>
+            <p>Reconocidos mundialmente por su aroma y calidad superior, cultivados en regiones como Chuao y los Andes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="consejos">
+      <h2>Consejos para el Viajero</h2>
+      <ul>
+        <li><strong>Mejor época para visitar:</strong> Para ver el Salto Ángel en su máximo esplendor, la temporada de lluvias (junio a noviembre) es ideal. Para playas, la temporada seca (diciembre a abril) ofrece días soleados continuos.</li>
+        <li><strong>Moneda y pagos:</strong> El dólar estadounidense es ampliamente aceptado, aunque es recomendable llevar efectivo en denominaciones pequeñas.</li>
+        <li><strong>Transporte:</strong> Para destinos como Los Roques o Canaima, los vuelos chárter o comerciales pequeños desde Caracas o Porlamar son indispensables.</li>
+      </ul>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Guía Turística de Venezuela. Creado con fines informativos.</p>
+  </footer>
+
+</body>
+</html>
