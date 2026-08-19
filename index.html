@@ -4,176 +4,409 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Día del Folklore 2026 - Venezuela</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Estilos generales */
-        body {
-            font-family: 'Montserrat', sans-serif; /* Un tipo de letra moderno y limpio */
-            background-color: #f8f9fa; /* Color de fondo muy claro */
+        :root {
+            --primary-yellow: #FFCB05;
+            --primary-blue: #0033A0;
+            --primary-red: #DA291C;
+            --bg-cream: #FAF7F2;
+            --card-bg: #FFFFFF;
+            --text-dark: #2C3E50;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
-            color: #333;
+            padding: 0;
         }
 
-        /* Estilos del encabezado (Header) */
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Banner Principal / Encabezado */
         header {
-            background-color: #fff;
-            padding: 20px;
+            background: linear-gradient(135deg, #002B82 0%, #0040C1 100%);
+            color: white;
+            padding: 40px 20px 30px 20px;
             text-align: center;
-            border-bottom: 3px solid #fecb2f; /* Línea amarilla en la base */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            position: relative;
         }
 
-        .header-content {
+        .header-title-container {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
         }
 
-        .header-content img {
-            width: 80px; /* Tamaño de la bandera */
-            height: auto;
+        .flag-img {
+            width: 90px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            animation: float 3s ease-in-out infinite;
         }
 
-        .header-content h1 {
-            color: #c90016; /* Color rojo vibrante */
-            font-size: 3em;
-            margin: 0;
-            font-weight: bold;
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-6px) rotate(1deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
         }
 
-        /* Estilos del cuerpo de la página */
+        h1.main-title {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 3.5rem;
+            color: var(--primary-red);
+            text-shadow: 3px 3px 0px var(--primary-yellow), 5px 5px 0px rgba(0,0,0,0.15);
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.6rem;
+            color: var(--primary-yellow);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+
         main {
-            max-width: 1000px; /* Ancho máximo para que se vea bien en pantallas grandes */
+            max-width: 1000px;
             margin: 40px auto;
             padding: 0 20px;
         }
 
-        /* Sección "Did you know?" y "Folklore Day" */
-        .intro-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Dos columnas */
-            gap: 40px;
-            margin-bottom: 60px;
-            align-items: center; /* Centrar verticalmente */
-        }
-
-        .intro-text-column {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-            border: 2px solid #005f9e; /* Borde azul */
-        }
-
-        .intro-text-column h2 {
-            font-size: 2.2em;
-            color: #005f9e;
-            margin-top: 0;
-        }
-
-        .intro-text-column p {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-
-        .image-column img {
-            width: 100%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-            display: block; /* Evita espacios vacíos debajo de la imagen */
-        }
-
-        /* Estilo para las flores decorativas */
-        .flower-decorative {
-            position: relative; /* Para posicionamiento absoluto de las flores */
-        }
-        .flower-decorative img.flower {
-            position: absolute;
-            width: 150px;
-            z-index: 10;
-        }
-        .flower-top-left { top: -80px; left: -80px; }
-        .flower-bottom-right { bottom: -80px; right: -80px; }
-
-        /* Estilos para las tarjetas de información principal */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-
-        .info-card {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+        /* Secciones del Típtico */
+        .section-card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 35px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            border-top: 6px solid var(--primary-yellow);
             position: relative;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
         }
 
-        .info-card h3 {
-            color: #c90016; /* Rojo */
-            border-bottom: 2px solid #c90016;
-            padding-bottom: 10px;
-            margin-top: 0;
-            font-size: 1.8em;
+        .section-card:nth-child(even) {
+            border-top-color: var(--primary-blue);
         }
 
-        .info-card ul, .info-card ol {
-            padding-left: 20px;
-            font-size: 1.1em;
-            line-height: 1.5;
+        .section-card:nth-child(3n) {
+            border-top-color: var(--primary-red);
         }
 
-        .info-card .card-image {
-            width: 100%;
-            height: 200px; /* Altura fija para las imágenes */
-            object-fit: cover; /* Ajustar imagen sin deformar */
-            border-radius: 10px;
+        h2.section-heading {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 2.2rem;
+            color: var(--primary-blue);
             margin-bottom: 20px;
-            order: -1; /* Poner la imagen al principio de la tarjeta */
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .card-decorator {
-            position: absolute;
-            background-size: contain;
-            background-repeat: no-repeat;
-            opacity: 0.15;
-            z-index: 0;
-        }
-
-        /* Estilos para la sección de "Ubicación" */
-        .location-section {
+        .sabias-que-card {
+            background: linear-gradient(135deg, #1A428A 0%, #0D2859 100%);
+            color: white;
+            border-top: none;
             display: grid;
-            grid-template-columns: 2fr 1fr; /* Dos columnas desiguales */
-            gap: 40px;
-            margin-bottom: 60px;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
             align-items: center;
         }
 
-        .location-card {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+        .sabias-que-card h2.section-heading {
+            color: var(--primary-yellow);
         }
 
-        .location-card h3 {
-            color: #005f9e;
-            margin-top: 0;
-            font-size: 1.8em;
+        .sabias-que-text p {
+            font-size: 1.15rem;
+            margin-bottom: 15px;
         }
 
-        .location-image img {
+        .stand-invite {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 10px;
+            box-shadow: 0 4px 10px rgba(218, 41, 28, 0.4);
+        }
+
+        .media-container {
             width: 100%;
-            height: auto;
             border-radius: 15px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            background-color: #f0f0f0;
         }
+
+        .media-container img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .map-container img {
+            object-fit: contain;
+            background-color: #ffffff;
+            padding: 10px;
+        }
+
+        /* Cuadrículas para Cultura y Gastronomía */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .text-content ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .text-content li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .text-content li::before {
+            content: "•";
+            color: var(--primary-red);
+            font-size: 2rem;
+            position: absolute;
+            left: 5px;
+            top: -8px;
+        }
+
+        .cultura-list li::before {
+            content: "★";
+            color: var(--primary-yellow);
+            font-size: 1.2rem;
+            left: 0;
+            top: 2px;
+        }
+
+        .location-info {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .tourist-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            list-style: none !important;
+        }
+
+        .tourist-item {
+            background-color: #F0F4FA;
+            padding: 15px 20px;
+            border-radius: 12px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            border-left: 5px solid var(--primary-blue);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Estilos para los Integrantes al final */
+        .integrantes-container {
+            margin-top: 25px;
+            background-color: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px dashed rgba(255, 203, 5, 0.4);
+        }
+
+        .integrantes-title {
+            color: var(--primary-yellow);
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .integrantes-list {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .integrante-item {
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #FFFFFF;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111827;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+            border-top: 5px solid var(--primary-yellow);
+        }
+
+        footer p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 5px 0;
+            color: #E5E7EB;
+        }
+
+        .grade-tag {
+            display: inline-block;
+            background-color: var(--primary-yellow);
+            color: #111827;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1.main-title { font-size: 2.6rem; }
+            .sabias-que-card, .content-grid { grid-template-columns: 1fr; }
+            .section-card { padding: 25px; }
+            .tourist-list { grid-template-columns: 1fr; }
+            .integrantes-list { flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Principio: Título de Venezuela e Imagen de la bandera flameando -->
+    <header>
+        <div class="header-title-container">
+            <img class="flag-img" src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/ve.svg" alt="Bandera de Venezuela flameando">
+            <h1 class="main-title">Venezuela</h1>
+        </div>
+        <div class="subtitle">Día del Folklore 2026</div>
+    </header>
+
+    <main>
+        <!-- 1. Cultura y Tradiciones -->
+        <section class="section-card">
+            <h2 class="section-heading">Cultura y Tradiciones</h2>
+            <div class="content-grid">
+                <div class="text-content">
+                    <ul class="cultura-list">
+                        <li><strong>Costumbres:</strong> Los venezolanos celebran fiestas como los Diablos Danzantes de Yare (Patrimonio de la Humanidad), la Cruz de Mayo y las Ferias de San Sebastián.</li>
+                        <li><strong>Música y danza:</strong> El joropo es el baile nacional, acompañado de arpa, cuatro y maracas. También destacan la gaita zuliana y el tambor afrovenezolano.</li>
+                        <li><strong>Vestimenta:</strong> El liquiliqui es el traje típico masculino y el traje de joropo con falda amplia es el femenino.</li>
+                    </ul>
+                </div>
+                <div class="media-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Diablos_danzantes_de_Yare_4.jpg/800px-Diablos_danzantes_de_Yare_4.jpg" alt="Diablos Danzantes de Yare - Cultura venezolana">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Gastronomía -->
+        <section class="section-card">
+            <h2 class="section-heading">Gastronomía</h2>
+            <div class="content-grid">
+                <div class="text-content">
+                    <ul>
+                        <li><strong>La Arepa:</strong> Pan de masa de maíz asado o frito, relleno con variedad de guisos (Reina Pepiada, carne mechada, queso).</li>
+                        <li><strong>Pabellón Criollo:</strong> Plato nacional compuesto por arroz blanco, carne mechada, caraotas (frijoles) negros y tajadas de plátano maduro frito.</li>
+                        <li><strong>Hallaca:</strong> Plato tradicional navideño elaborado con masa de maíz sazonada, rellena de guiso de carnes y envuelta en hojas de plátano.</li>
+                    </ul>
+                </div>
+                <div class="media-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Arepas_asadas.jpg/800px-Arepas_asadas.jpg" alt="Arepas tradicionales venezolanas">
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Ubicación geográfica -->
+        <section class="section-card">
+            <h2 class="section-heading">Ubicación geográfica</h2>
+            <div class="content-grid">
+                <div class="location-info">
+                    <p>Venezuela se ubica al norte de América del Sur, limitando con Colombia, Brasil, Guyana y el mar Caribe. Su capital es Caracas.</p>
+                </div>
+                <div class="media-container map-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Venezuela_in_its_region.svg/800px-Venezuela_in_its_region.svg.png" alt="Mapa de ubicación de Venezuela en América del Sur">
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Lugares turísticos -->
+        <section class="section-card">
+            <h2 class="section-heading">Lugares turísticos</h2>
+            <ul class="tourist-list">
+                <li class="tourist-item">📍 Salto Ángel (Canaima)</li>
+                <li class="tourist-item">📍 Archipiélago de Los Roques</li>
+                <li class="tourist-item">📍 Parque Nacional Morrocoy</li>
+                <li class="tourist-item">📍 Teleférico de Mérida</li>
+                <li class="tourist-item">📍 Médanos de Coro</li>
+            </ul>
+        </section>
+
+        <!-- 5. ¿Sabías que? & Invitación al Stand -->
+        <section class="section-card sabias-que-card">
+            <div class="sabias-que-text">
+                <h2 class="section-heading">¿Sabías que?</h2>
+                <p>El Salto Ángel, en el Parque Nacional Canaima, es la cascada más alta del mundo con 979 metros de caída libre. Fue declarado Patrimonio de la Humanidad por la UNESCO.</p>
+                <div class="stand-invite">
+                    ¡Te invitamos a conocer la riqueza de Venezuela en nuestro stand!
+                </div>
+            </div>
+            <div class="media-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Salto_Angel_2.jpg/800px-Salto_Angel_2.jpg" alt="El Salto Ángel en el Parque Nacional Canaima, Venezuela">
+            </div>
+        </section>
+    </main>
+
+    <!-- Final de la página: Integrantes, Grado y Colegio -->
+    <footer>
+        <div class="grade-tag">8vo B</div>
+        <p><strong>Colegio Santa Teresita</strong></p>
+        
+        <div class="integrantes-container">
+            <div class="integrantes-title">Integrantes</div>
+            <ul class="integrantes-list">
+                <li class="integrante-item">Renata Urbieta</li>
+                <li class="integrante-item">Sophia Gómez</li>
+                <li class="integrante-item">Francisco Laws</li>
+                <li class="integrante-item">Lucciano Veloso</li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>
 
         /* Estilos para la sección de "Lugares Turísticos" */
         .tourist-spots {
