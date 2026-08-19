@@ -1,223 +1,580 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Descubre Venezuela | Guía Turística</title>
-  <style>
-    :root {
-      --primary: #1d3557;
-      --accent: #e63946;
-      --bg: #f8f9fa;
-      --text: #2b2d42;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Día del Folklore 2026 - Venezuela</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Montserrat', sans-serif; /* Un tipo de letra moderno y limpio */
+            background-color: #f8f9fa; /* Color de fondo muy claro */
+            margin: 0;
+            color: #333;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        /* Estilos del encabezado (Header) */
+        header {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #fecb2f; /* Línea amarilla en la base */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      background-color: var(--bg);
-      color: var(--text);
-    }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
 
-    header {
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1596700812239-16a75f8f3769?q=80&w=1200') center/cover no-repeat;
-      height: 60vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-      padding: 0 1rem;
-    }
+        .header-content img {
+            width: 80px; /* Tamaño de la bandera */
+            height: auto;
+        }
 
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
+        .header-content h1 {
+            color: #c90016; /* Color rojo vibrante */
+            font-size: 3em;
+            margin: 0;
+            font-weight: bold;
+        }
 
-    header p {
-      font-size: 1.25rem;
-      max-width: 600px;
-    }
+        /* Estilos del cuerpo de la página */
+        main {
+            max-width: 1000px; /* Ancho máximo para que se vea bien en pantallas grandes */
+            margin: 40px auto;
+            padding: 0 20px;
+        }
 
-    nav {
-      background-color: var(--primary);
-      padding: 1rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+        /* Sección "Did you know?" y "Folklore Day" */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Dos columnas */
+            gap: 40px;
+            margin-bottom: 60px;
+            align-items: center; /* Centrar verticalmente */
+        }
 
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      gap: 2rem;
-    }
+        .intro-text-column {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            border: 2px solid #005f9e; /* Borde azul */
+        }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
+        .intro-text-column h2 {
+            font-size: 2.2em;
+            color: #005f9e;
+            margin-top: 0;
+        }
 
-    nav a:hover {
-      color: #f1faee;
-      text-decoration: underline;
-    }
+        .intro-text-column p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
 
-    .container {
-      max-width: 1100px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
-    }
+        .image-column img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            display: block; /* Evita espacios vacíos debajo de la imagen */
+        }
 
-    section {
-      margin-bottom: 3rem;
-    }
+        /* Estilo para las flores decorativas */
+        .flower-decorative {
+            position: relative; /* Para posicionamiento absoluto de las flores */
+        }
+        .flower-decorative img.flower {
+            position: absolute;
+            width: 150px;
+            z-index: 10;
+        }
+        .flower-top-left { top: -80px; left: -80px; }
+        .flower-bottom-right { bottom: -80px; right: -80px; }
 
-    h2 {
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-      border-bottom: 3px solid var(--accent);
-      display: inline-block;
-      padding-bottom: 0.2rem;
-    }
+        /* Estilos para las tarjetas de información principal */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+            gap: 40px;
+            margin-bottom: 60px;
+        }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
+        .info-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
 
-    .card {
-      background: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
+        .info-card h3 {
+            color: #c90016; /* Rojo */
+            border-bottom: 2px solid #c90016;
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 1.8em;
+        }
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+        .info-card ul, .info-card ol {
+            padding-left: 20px;
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
 
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
+        .info-card .card-image {
+            width: 100%;
+            height: 200px; /* Altura fija para las imágenes */
+            object-fit: cover; /* Ajustar imagen sin deformar */
+            border-radius: 10px;
+            margin-bottom: 20px;
+            order: -1; /* Poner la imagen al principio de la tarjeta */
+        }
 
-    .card-content {
-      padding: 1.2rem;
-    }
+        .card-decorator {
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.15;
+            z-index: 0;
+        }
 
-    .card-content h3 {
-      margin-bottom: 0.5rem;
-      color: var(--primary);
-    }
+        /* Estilos para la sección de "Ubicación" */
+        .location-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* Dos columnas desiguales */
+            gap: 40px;
+            margin-bottom: 60px;
+            align-items: center;
+        }
 
-    footer {
-      background-color: var(--primary);
-      color: white;
-      text-align: center;
-      padding: 1.5rem;
-      margin-top: 2rem;
-    }
-  </style>
+        .location-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+        }
+
+        .location-card h3 {
+            color: #005f9e;
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+
+        .location-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+        }
+
+        /* Estilos para la sección de "Lugares Turísticos" */
+        .tourist-spots {
+            margin-bottom: 60px;
+        }
+
+        .tourist-spots h3 {
+            color: #c90016;
+            font-size: 2.2em;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .tourist-spots-list {
+            list-style-type: disc;
+            font-size: 1.3em;
+            line-height: 1.6;
+            columns: 2; /* Divide la lista en dos columnas */
+            -webkit-columns: 2;
+            -moz-columns: 2;
+            column-gap: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Estilos para el pie de página (Footer) */
+        footer {
+            background-color: #005f9e; /* Azul oscuro */
+            color: #fff;
+            padding: 30px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        /* Decoración de flores en el pie */
+        .footer-flower {
+            width: 60px;
+            height: 60px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.6;
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        /* Media Queries para adaptabilidad en móviles */
+        @media (max-width: 768px) {
+            .header-content h1 { font-size: 2em; }
+            .intro-grid { grid-template-columns: 1fr; }
+            .info-grid { grid-template-columns: 1fr; }
+            .location-section { grid-template-columns: 1fr; }
+            .tourist-spots-list { columns: 1; -webkit-columns: 1; -moz-columns: 1; }
+            .flower-decorative img.flower { width: 100px; }
+            .flower-top-left { top: -50px; left: -50px; }
+            .flower-bottom-right { bottom: -50px; right: -50px; }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>Venezuela Te Espera</h1>
-    <p>Tierra de gracia, naturaleza indómita, playas caribeñas y los tepuyes más antiguos del planeta.</p>
-  </header>
-
-  <nav>
-    <ul>
-      <li><a href="#destinos">Destinos</a></li>
-      <li><a href="#gastronomia">Gastronomía</a></li>
-      <li><a href="#consejos">Consejos de Viaje</a></li>
-    </ul>
-  </nav>
-
-  <div class="container">
-    
-    <section id="destinos">
-      <h2>Destinos Principales</h2>
-      <div class="grid">
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1596700812239-16a75f8f3769?q=80&w=600" alt="Salto Ángel">
-          <div class="card-content">
-            <h3>Parque Nacional Canaima y Salto Ángel</h3>
-            <p>Hogar de la caída de agua más alta del mundo (979 metros) y de majestuosos tepuyes milenarios en el corazón de la selva amazónica.</p>
-          </div>
+    <header>
+        <div class="header-content">
+            <img src="https://flagpedia.net/data/flags/w1160/ve.webp" alt="Bandera de Venezuela">
+            <h1>Venezuela</h1>
         </div>
+    </header>
 
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=600" alt="Los Roques">
-          <div class="card-content">
-            <h3>Archipiélago Los Roques</h3>
-            <p>Un paraíso caribeño de arrecifes de coral, aguas turquesas cristalinas y arena blanca ideal para buceo y relajación.</p>
-          </div>
+    <main>
+        <!-- Sección "¿Sabías que?" con flor decorativa -->
+        <section class="intro-grid flower-decorative">
+            <div class="image-column">
+                <img src="https://images.unsplash.com/photo-1594917173167-27e163c4566c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MXxzZWFyY2h8MTB8fGFuZ2VsJTIwZmFsbHN8ZW58MHx8fHwxNjg2NDQ0NjA5&ixlib=rb-4.0.3&q=80&w=1080" alt="Vista majestuosa del Salto Ángel">
+            </div>
+            <div class="intro-text-column">
+                <h2>¿Sabías que?</h2>
+                <p>El Salto Ángel, en el Parque Nacional Canaima, es la cascada más alta del mundo con 979 metros de caída libre. Fue declarado Patrimonio de la Humanidad por la UNESCO.</p>
+                <p>Día del Folklore 2026. Te invitamos a conocer la riqueza de Venezuela.</p>
+            </div>
+            <!-- Flores decorativas laterales -->
+            <img class="flower flower-top-left" src="https://images.unsplash.com/photo-1560940523-96b17789b7d8?crop=entropy&cs=tinysrgb```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Día del Folklore 2026 - Venezuela</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            color: #333;
+        }
+
+        /* Estilos del encabezado */
+        header {
+            background-color: #fff;
+            padding: 30px;
+            text-align: center;
+            border-bottom: 5px solid #ffcc00; /* Línea amarilla base */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .header-content img {
+            width: 100px;
+            height: auto;
+        }
+
+        .header-content h1 {
+            color: #d12a2e; /* Rojo vibrante */
+            font-size: 3.5em;
+            margin: 0;
+            font-family: 'Georgia', serif;
+        }
+
+        /* Estilos del cuerpo de la página */
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Sección "¿Sabías que?" y imagen del Salto Ángel */
+        .intro-section {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+            align-items: center;
+        }
+
+        .intro-text-card {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-left: 5px solid #005691; /* Borde azul */
+        }
+
+        .intro-text-card h2 {
+            font-size: 2.2em;
+            color: #005691;
+            margin-top: 0;
+        }
+
+        .intro-text-card p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .image-column img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        /* Decoración de flores en la sección intro */
+        .flower-decorative {
+            position: relative;
+        }
+        .flower-decorative .flower {
+            position: absolute;
+            width: 150px;
+            z-index: 10;
+        }
+        .flower-top-right { top: -80px; right: -80px; }
+        .flower-bottom-left { bottom: -80px; left: -80px; }
+
+        /* Estilos para las tarjetas de información */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .info-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .info-card h3 {
+            color: #ffcc00; /* Amarillo */
+            border-bottom: 2px solid #ffcc00;
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+
+        .info-card ul, .info-card ol {
+            padding-left: 20px;
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+
+        .info-card .card-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: block;
+        }
+
+        .info-card-gastronomia .card-image {
+            object-fit: contain; /* Para que la comida se vea completa */
+            height: 200px;
+        }
+
+        .card-decorator {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 80px;
+            height: 80px;
+            opacity: 0.1;
+        }
+
+        /* Estilos para la sección de Ubicación y Mapa */
+        .location-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+            align-items: center;
+        }
+
+        .location-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .location-card h3 {
+            color: #005691;
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+
+        .map-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        /* Estilos para la sección de Lugares Turísticos */
+        .tourist-spots h3 {
+            color: #d12a2e;
+            font-size: 2.2em;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .tourist-spots ul {
+            list-style-type: square;
+            font-size: 1.3em;
+            line-height: 1.6;
+            columns: 2;
+            -webkit-columns: 2;
+            -moz-columns: 2;
+            column-gap: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Estilos del pie de página */
+        footer {
+            background-color: #d12a2e;
+            color: #fff;
+            padding: 30px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .flower-footer {
+            display: inline-block;
+            vertical-align: middle;
+            width: 50px;
+            height: 50px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+        }
+
+        /* Media Queries para adaptabilidad móvil */
+        @media (max-width: 768px) {
+            .header-content h1 { font-size: 2.5em; }
+            .intro-section { grid-template-columns: 1fr; }
+            .info-grid { grid-template-columns: 1fr; }
+            .location-section { grid-template-columns: 1fr; }
+            .tourist-spots ul { columns: 1; -webkit-columns: 1; -moz-columns: 1; }
+            .flower { width: 100px; }
+            .flower-top-right { top: -50px; right: -50px; }
+            .flower-bottom-left { bottom: -50px; left: -50px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <img src="[https://upload.wikimedia.org/wikipedia/commons/e/e6/Flag_of_Venezuela.svg](https://upload.wikimedia.org/wikipedia/commons/e/e6/Flag_of_Venezuela.svg)" alt="Bandera de Venezuela">
+            <h1>Venezuela</h1>
         </div>
+    </header>
 
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600" alt="Mérida">
-          <div class="card-content">
-            <h3>Los Andes y Mérida</h3>
-            <p>Montañas nevadas, pueblos pintorescos y el Teleférico Mukumbarí, el más alto y segundo más largo del mundo.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <main>
+        <!-- Sección Intro con Imagen del Salto Ángel -->
+        <section class="intro-section flower-decorative">
+            <div class="image-column">
+                <img src="[https://images.unsplash.com/photo-1594917173167-27e163c4566c?q=80&w=1200](https://images.unsplash.com/photo-1594917173167-27e163c4566c?q=80&w=1200)" alt="El majestuoso Salto Ángel en Venezuela">
+            </div>
+            <div class="intro-text-card">
+                <h2>¿Sabías que?</h2>
+                <p>El Salto Ángel, en el Parque Nacional Canaima, es la cascada más alta del mundo con 979 metros de caída libre. Fue declarado Patrimonio de la Humanidad por la UNESCO.</p>
+                <p>Día del Folklore 2026. ¡Te invitamos a conocer la riqueza de Venezuela en nuestro stand!</p>
+            </div>
+            <img class="flower flower-top-right" src="[https://images.unsplash.com/photo-1560940523-96b17789b7d8?q=80&w=150](https://images.unsplash.com/photo-1560940523-96b17789b7d8?q=80&w=150)" alt="Flor amarilla decorativa">
+            <img class="flower flower-bottom-left" src="[https://images.unsplash.com/photo-1533038590840-1cde6e668a91?q=80&w=150](https://images.unsplash.com/photo-1533038590840-1cde6e668a91?q=80&w=150)" alt="Flor rosa decorativa">
+        </section>
 
-    <section id="gastronomia">
-      <h2>Gastronomía Imperdible</h2>
-      <div class="grid">
-        <div class="card">
-          <div class="card-content">
-            <h3>La Arepa</h3>
-            <p>El plato nacional por excelencia. Un pan de maíz asado o frito relleno de infinidad de ingredientes como la famosa "Reina Pepiada".</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-content">
-            <h3>Pabellón Criollo</h3>
-            <p>Plato tradicional compuesto por arroz blanco, carne desmechada, caraotas negras (frijoles) y tajadas de plátano maduro frito.</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-content">
-            <h3>Cacao y Café Venezolano</h3>
-            <p>Reconocidos mundialmente por su aroma y calidad superior, cultivados en regiones como Chuao y los Andes.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+        <!-- Sección de Cultura y Gastronomía -->
+        <section class="info-grid">
+            <div class="info-card">
+                <h3>Cultura y Tradiciones</h3>
+                <ul>
+                    <li><strong>Costumbres:</strong> Los venezolanos celebran fiestas como los Diablos Danzantes de Yare (Patrimonio de la Humanidad), la Cruz de Mayo y las Ferias de San Sebastián.</li>
+                    <li><strong>Música y danza:</strong> El joropo es el baile nacional, acompañado de arpa, cuatro y maracas. También destacan la gaita zuliana y el tambor afrovenezolano.</li>
+                    <li><strong>Vestimenta:</strong> El liquiliqui es el traje típico masculino y el traje de joropo con falda amplia es el femenino.</li>
+                </ul>
+                <img class="card-image" src="[https://images.unsplash.com/photo-1601662528567-526cf06f6582?q=80&w=600](https://images.unsplash.com/photo-1601662528567-526cf06f6582?q=80&w=600)" alt="Bailarines de joropo en traje típico">
+                <div class="card-decorator" style="background-image: url('[https://images.unsplash.com/photo-1560940523-96b17789b7d8?q=80&w=100](https://images.unsplash.com/photo-1560940523-96b17789b7d8?q=80&w=100)'); opacity: 0.1;"></div>
+            </div>
 
-    <section id="consejos">
-      <h2>Consejos para el Viajero</h2>
-      <ul>
-        <li><strong>Mejor época para visitar:</strong> Para ver el Salto Ángel en su máximo esplendor, la temporada de lluvias (junio a noviembre) es ideal. Para playas, la temporada seca (diciembre a abril) ofrece días soleados continuos.</li>
-        <li><strong>Moneda y pagos:</strong> El dólar estadounidense es ampliamente aceptado, aunque es recomendable llevar efectivo en denominaciones pequeñas.</li>
-        <li><strong>Transporte:</strong> Para destinos como Los Roques o Canaima, los vuelos chárter o comerciales pequeños desde Caracas o Porlamar son indispensables.</li>
-      </ul>
-    </section>
+            <div class="info-card info-card-gastronomia">
+                <h3>Gastronomía</h3>
+                <ul>
+                    <li><strong>La Arepa:</strong> Pan de masa de maíz asado o frito, relleno con variedad de guisos (Reina Pepiada, carne mechada, queso).</li>
+                    <li><strong>Pabellón Criollo:</strong> Plato nacional compuesto por arroz blanco, carne mechada, caraotas (frijoles) negros y tajadas de plátano maduro frito.</li>
+                    <li><strong>Hallaca:</strong> Plato tradicional navideño elaborado con masa de maíz sazonada, rellena de guiso de carnes y envuelta en hojas de plátano.</li>
+                </ul>
+                <img class="card-image" src="[https://images.unsplash.com/photo-1616011746366-2e86b245a4a5?q=80&w=600](https://images.unsplash.com/photo-1616011746366-2e86b245a4a5?q=80&w=600)" alt="Deliciosa arepa venezolana rellena">
+                <div class="card-decorator" style="background-image: url('[https://images.unsplash.com/photo-1533038590840-1cde6e668a91?q=80&w=100](https://images.unsplash.com/photo-1533038590840-1cde6e668a91?q=80&w=100)'); opacity: 0.1;"></div>
+            </div>
+        </section>
 
-  </div>
+        <!-- Sección de Ubicación con Mapa -->
+        <section class="location-section">
+            <div class="location-card">
+                <h3>Ubicación geográfica</h3>
+                <p>Venezuela se ubica al norte de América del Sur, limitando con Colombia, Brasil, Guyana y el mar Caribe. Su capital es Caracas.</p>
+            </div>
+            <div class="map-image">
+                <img src="[https://upload.wikimedia.org/wikipedia/commons/1/1b/Venezuela_in_South_America.svg](https://upload.wikimedia.org/wikipedia/commons/1/1b/Venezuela_in_South_America.svg)" alt="Mapa de Venezuela en América del Sur">
+            </div>
+        </section>
 
-  <footer>
-    <p>&copy; 2026 Guía Turística de Venezuela. Creado con fines informativos.</p>
-  </footer>
+        <!-- Sección de Lugares Turísticos -->
+        <section class="tourist-spots">
+            <h3>Lugares turísticos</h3>
+            <ul>
+                <li>Salto Ángel (Canaima)</li>
+                <li>Archipiélago de Los Roques</li>
+                <li>Parque Nacional Morrocoy</li>
+                <li>Teleférico de Mérida</li>
+                <li>Médanos de Coro</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="flower-footer" style="background-image: url('[https://images.unsplash.com/photo-1560940523-96b17789b7d8?q=80&w=50](https://images.unsplash.com/photo-1560940523-96b17789b7d8?q=80&w=50)');"></div>
+        <p><strong>Colegio Santa Teresita</strong></p>
+        <p>8vo B</p>
+        <p>Día del Folklore 2026</p>
+        <div class="flower-footer" style="background-image: url('[https://images.unsplash.com/photo-1533038590840-1cde6e668a91?q=80&w=50](https://images.unsplash.com/photo-1533038590840-1cde6e668a91?q=80&w=50)');"></div>
+    </footer>
 
 </body>
 </html>
